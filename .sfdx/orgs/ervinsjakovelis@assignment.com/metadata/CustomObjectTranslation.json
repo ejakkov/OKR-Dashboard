@@ -1,0 +1,96 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0052o00000DD4W5AAL",
+      "createdByName": "Ervīns Jakovelis",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "objectTranslations/OKR__c-en_US.objectTranslation",
+      "fullName": "OKR__c-en_US",
+      "id": "",
+      "lastModifiedById": "0052o00000DD4W5AAL",
+      "lastModifiedByName": "Ervīns Jakovelis",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "CustomObjectTranslation"
+    },
+    {
+      "createdById": "0052o00000DD4W5AAL",
+      "createdByName": "Ervīns Jakovelis",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "objectTranslations/Survey__c-en_US.objectTranslation",
+      "fullName": "Survey__c-en_US",
+      "id": "",
+      "lastModifiedById": "0052o00000DD4W5AAL",
+      "lastModifiedByName": "Ervīns Jakovelis",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "CustomObjectTranslation"
+    },
+    {
+      "createdById": "0052o00000DD4W5AAL",
+      "createdByName": "Ervīns Jakovelis",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "objectTranslations/Review__c-en_US.objectTranslation",
+      "fullName": "Review__c-en_US",
+      "id": "",
+      "lastModifiedById": "0052o00000DD4W5AAL",
+      "lastModifiedByName": "Ervīns Jakovelis",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "CustomObjectTranslation"
+    },
+    {
+      "createdById": "0052o00000DD4W5AAL",
+      "createdByName": "Ervīns Jakovelis",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "objectTranslations/GoogleReview__c-en_US.objectTranslation",
+      "fullName": "GoogleReview__c-en_US",
+      "id": "",
+      "lastModifiedById": "0052o00000DD4W5AAL",
+      "lastModifiedByName": "Ervīns Jakovelis",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "CustomObjectTranslation"
+    },
+    {
+      "createdById": "0052o00000DD4W5AAL",
+      "createdByName": "Ervīns Jakovelis",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "objectTranslations/Objective__c-en_US.objectTranslation",
+      "fullName": "Objective__c-en_US",
+      "id": "",
+      "lastModifiedById": "0052o00000DD4W5AAL",
+      "lastModifiedByName": "Ervīns Jakovelis",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "CustomObjectTranslation"
+    },
+    {
+      "createdById": "0052o00000DD4W5AAL",
+      "createdByName": "Ervīns Jakovelis",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "objectTranslations/KeyResult__c-en_US.objectTranslation",
+      "fullName": "KeyResult__c-en_US",
+      "id": "",
+      "lastModifiedById": "0052o00000DD4W5AAL",
+      "lastModifiedByName": "Ervīns Jakovelis",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "CustomObjectTranslation"
+    },
+    {
+      "createdById": "0052o00000DD4W5AAL",
+      "createdByName": "Ervīns Jakovelis",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "objectTranslations/CaseStudy__c-en_US.objectTranslation",
+      "fullName": "CaseStudy__c-en_US",
+      "id": "",
+      "lastModifiedById": "0052o00000DD4W5AAL",
+      "lastModifiedByName": "Ervīns Jakovelis",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": "CustomObjectTranslation"
+    }
+  ]
+}
