@@ -1,18 +1,29 @@
 <template>
     <div class="okr-dashboard">
-      <!-- Title -->
-      <lightning-card title={title}>
-        <h2 slot="title">{title}</h2>
+      <div class="selection-container">
+        <lightning-card title={users}>
+            <h2 slot="title">{title}</h2>
+            <lightning-combobox
+                name="userSelection"
+                label="Select User"
+                value={selectedUserId}
+                options={userOptions}
+                onchange={handleUserSelection}
+            ></lightning-combobox>
+        </lightning-card>
+    
+        <lightning-card title={years}>
+            <h2 slot="title">{title}</h2>
+            <lightning-combobox
+                name="yearSelection"
+                label="Select Year"
+                value={selectedYear}
+                options={yearOptions}
+                onchange={handleYearSelection}
+            ></lightning-combobox>
+        </lightning-card>
+    </div>
   
-        <!-- User Selection Dropdown -->
-        <lightning-combobox
-          name="userSelection"
-          label="Select User"
-          value={selectedUserId}
-          options={userOptions}
-          onchange={handleUserSelection}
-        ></lightning-combobox>
-      </lightning-card>
   
       <template for:each={keyResults} for:item="objectiveKeyResult">
         <div key={objectiveKeyResult.objective.Id} class="objective-card">

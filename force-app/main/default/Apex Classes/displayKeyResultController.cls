@@ -1,11 +1,13 @@
 public with sharing class displayKeyResultController {
     @AuraEnabled(cacheable=true)
-    public static List<ObjectiveKeyResultWrapper> getKeyResult(List<Objective__c> objectivesList) {
+    public static List<ObjectiveKeyResultWrapper> getKeyResult(String userId, Integer year) {
         List<ObjectiveKeyResultWrapper> objectiveKeyResultList = new List<ObjectiveKeyResultWrapper>();
+        
+        List<Objective__c> objectivesList = [SELECT Name, Id FROM Objective__c WHERE User__c = :userId AND Year__c =:year];
 
         try {
             for (Objective__c objective : objectivesList) {
-                List<KeyResult__c> keyResults = [SELECT Id, Name FROM KeyResult__c WHERE Objective__c = :objective.Id];
+                List<KeyResult__c> keyResults = [SELECT Id, Name FROM KeyResult__c WHERE Objective__c = :objective.Id ];
                 List<KeyResultWrapper> keyResultList = new List<KeyResultWrapper>();
 
                 for (KeyResult__c keyResult : keyResults) {

@@ -1,0 +1,10 @@
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons lightning-button {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}

@@ -1,13 +1,13 @@
 import { LightningElement, wire, track } from 'lwc';
 import getUsers from '@salesforce/apex/SelectUserController.getUsers';
 import getYears from '@salesforce/apex/SelectYearController.getYears';
-import displayObjective from '@salesforce/apex/displayObjectiveController.getObjective';
 import displayKeyResult from '@salesforce/apex/displayKeyResultController.getKeyResult';
 
 
 
 export default class UserSelectionComponent extends LightningElement {
     @track selectedUserId = '';
+    @track selectedYear;
     @track userOptions = [];
     @track yearOptions = [];
     @track objectives = [];
@@ -26,10 +26,12 @@ export default class UserSelectionComponent extends LightningElement {
 
     @wire(getYears) wiredYears({ error, data }) {
         if (data) {
+            console.log(data);
             this.yearOptions = data.map(year => ({
-                label: year.year,
-                value: year.year
+                label: year.toString(),
+                value: year.toString()
             }));
+            console.log('years:',this.yearOptions);
         } else if (error) {
             console.error('Error fetching user data: ' + JSON.stringify(error));
         }
@@ -37,25 +39,19 @@ export default class UserSelectionComponent extends LightningElement {
 
     handleUserSelection(event) {
         this.selectedUserId = event.detail.value;
-        this.getObjective();
+        this.getKeyResult();
     }
 
-    getObjective() {
-        if (this.selectedUserId) {
-            displayObjective({ userId: this.selectedUserId })
-                .then(result => {
-                    this.objectives = result;
-                    this.getKeyResult();
-                })
-                .catch(error => {
-                    console.error('Error calling Apex method: ' + JSON.stringify(error));
-                });
-        }
+    handleYearSelection(event) {
+        this.selectedYear = event.detail.value;
+        console.log(this.selectedYear);
+        this.getKeyResult();
     }
+
 
     getKeyResult() {
         if (this.objectives) {
-            displayKeyResult({ objectivesList: this.objectives })
+            displayKeyResult({ userId: this.selectedUserId, year: this.selectedYear })
                 .then(result => {
                     this.keyResults = result;
                     console.log('keyresults',this.keyResults);
