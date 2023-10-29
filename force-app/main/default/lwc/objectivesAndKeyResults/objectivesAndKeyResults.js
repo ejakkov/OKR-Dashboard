@@ -53,13 +53,12 @@ export default class UserSelectionComponent extends LightningElement {
         }
     }
 
-    getKeyResult(){
+    getKeyResult() {
         if (this.objectives) {
-
-            displayKeyResult({ objectivesList: this.objectives})
+            displayKeyResult({ objectivesList: this.objectives })
                 .then(result => {
                     this.keyResults = result;
-                    console.log(this.keyResults);
+                    console.log('keyresults',this.keyResults);
                 })
                 .catch(error => {
                     console.error('Error calling Apex method: ' + JSON.stringify(error));
@@ -67,3 +66,4 @@ export default class UserSelectionComponent extends LightningElement {
         }
     }
 }
+

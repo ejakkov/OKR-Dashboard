@@ -61,5 +61,4 @@ export default class ObjectiveNewButtonLWC extends NavigationMixin(LightningElem
             },
         });
     }
-    // Implement similar functions for other custom objects
 }

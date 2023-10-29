@@ -1,0 +1,38 @@
+<template>
+    <div class="okr-dashboard">
+      <!-- Title -->
+      <lightning-card title={title}>
+        <h2 slot="title">{title}</h2>
+  
+        <!-- User Selection Dropdown -->
+        <lightning-combobox
+          name="userSelection"
+          label="Select User"
+          value={selectedUserId}
+          options={userOptions}
+          onchange={handleUserSelection}
+        ></lightning-combobox>
+      </lightning-card>
+  
+      <template for:each={keyResults} for:item="objectiveKeyResult">
+        <div key={objectiveKeyResult.objective.Id} class="objective-card">
+          <div class="objective">
+            <strong>{objectiveKeyResult.objective.Name}</strong>
+          </div>
+          <div class="key-results">
+            <template for:each={objectiveKeyResult.keyResults} for:item="keyResult">
+              <div key={keyResult.keyResultId} class="key-result-card">
+                <div><strong>{keyResult.keyResultName}</strong></div>
+                <template for:each={keyResult.targets} for:item="target">
+                  <div key={target.Id} class="target">
+                    <p><strong>{target.type}:</strong> {target.currentValue}/{target.targetValue}</p>
+                  </div>
+                </template>
+              </div>
+            </template>
+          </div>
+        </div>
+      </template>
+    </div>
+  </template>
+  

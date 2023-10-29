@@ -1,0 +1,57 @@
+
+.okr-dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    padding-top: 0%;
+  }
+
+  lightning-card h2[slot="title"] {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  lightning-combobox[name="userSelection"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .objective-card {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .objective {
+    font-weight: bold;
+    font-size: large;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .key-results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px; 
+  }
+  
+  .key-result-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    flex: 1;
+  }
+  
+  .target {
+    margin: 5px 0;
+  }
+  
+  .target p strong {
+    font-weight: bold;
+    margin: 0;
+  }
+  
