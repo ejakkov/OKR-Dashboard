@@ -7,7 +7,7 @@ import displayKeyResult from '@salesforce/apex/displayKeyResultController.getKey
 
 export default class UserSelectionComponent extends LightningElement {
     @track selectedUserId = '';
-    @track selectedYear;
+    @track selectedYear = '';
     @track userOptions = [];
     @track yearOptions = [];
     @track objectives = [];

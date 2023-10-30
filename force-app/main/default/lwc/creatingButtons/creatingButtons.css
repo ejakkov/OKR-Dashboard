@@ -1,10 +1,19 @@
 .buttons {
     display: flex;
-    justify-content: space-between;
+    flex-grow: 1;
 }
 
-.buttons lightning-button {
-    flex: 1;
+.custom-button {
+    flex-grow: 1;
     margin: 0;
-    padding: 0;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    background-color: #0070d2;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
 }
