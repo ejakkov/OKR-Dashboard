@@ -42,7 +42,7 @@ trigger ContractTrigger  on Contract (after insert, before update, before delete
         for (Contract record : deletedRecords) {
             if(targetRecordCountMap.containsKey(record.Target__c)){
                 Id targetId = record.Target__c;
-                targetReviewCount.put(targetId, targetRecordCountMap.get(record.Target__c));
+                targetReviewCount.put(targetId, targetRecordCountMap.get(record.Target__c)-1);
             }
     }
 }

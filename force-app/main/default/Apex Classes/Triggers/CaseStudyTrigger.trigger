@@ -42,7 +42,7 @@ trigger CaseStudyTrigger  on CaseStudy__c (after insert, before update, before d
         for (CaseStudy__c record : deletedRecords) {
             if(targetRecordCountMap.containsKey(record.Target__c)){
                 Id targetId = record.Target__c;
-                targetReviewCount.put(targetId, targetRecordCountMap.get(record.Target__c));
+                targetReviewCount.put(targetId, targetRecordCountMap.get(record.Target__c)-1);
             }
     }
 }

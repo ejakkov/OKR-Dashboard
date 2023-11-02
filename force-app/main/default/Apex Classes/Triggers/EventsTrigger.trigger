@@ -46,7 +46,7 @@ trigger EventsTrigger on Event__c (after insert, before update, before delete) {
         for (Event__c record : deletedRecords) {
             if(GoogleReviewCount.containsKey(record)){
                 Id targetId = record.Target__c;
-                targetReviewCount.put(targetId, GoogleReviewCount.get(record));
+                targetReviewCount.put(targetId, GoogleReviewCount.get(record)-1);
             }
     }
 }
