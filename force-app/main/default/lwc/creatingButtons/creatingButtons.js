@@ -32,6 +32,16 @@ export default class ObjectiveNewButtonLWC extends NavigationMixin(LightningElem
         });
     }
 
+    createGoogleReview() {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'GoogleReview__c',
+                actionName: 'new',
+            },
+        });
+    }
+
     createSurvey() {
         this[NavigationMixin.Navigate]({
             type: 'standard__objectPage',
@@ -52,11 +62,61 @@ export default class ObjectiveNewButtonLWC extends NavigationMixin(LightningElem
         });
     }
 
-    createGoogleReview() {
+    createEvent() {
         this[NavigationMixin.Navigate]({
             type: 'standard__objectPage',
             attributes: {
-                objectApiName: 'GoogleReview__c',
+                objectApiName: 'Event__c',
+                actionName: 'new',
+            },
+        });
+    }
+
+    createCall() {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'Call__c',
+                actionName: 'new',
+            },
+        });
+    }
+
+    createContract() {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'Contract',
+                actionName: 'new',
+            },
+        });
+    }
+
+    createOpportunity() {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'Opportunity',
+                actionName: 'new',
+            },
+        });
+    }
+
+    createLinkedInLead() {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'LinkedInLead__c',
+                actionName: 'new',
+            },
+        });
+    }
+
+    createTarget() {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'Target__c',
                 actionName: 'new',
             },
         });

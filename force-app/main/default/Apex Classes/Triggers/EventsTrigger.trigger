@@ -1,43 +1,41 @@
-trigger GoogleReviewTrigger on GoogleReview__c (after insert, before update, before delete) {
+trigger EventsTrigger on Event__c (after insert, before update, before delete) {
 
-    List<GoogleReview__c> existingRecords = new List<GoogleReview__c>();
+    List<Event__c> existingRecords = new List<Event__c>();
     Map<Id, Integer> targetReviewCount = new Map<Id, Integer>();
-    Map<GoogleReview__c, Integer> GoogleReviewCount= new Map<GoogleReview__c, Integer>();
+    Map<Event__c, Integer> GoogleReviewCount= new Map<Event__c, Integer>();
     List<Id> GoogleReviewIdList = new List<Id>();
 
     if(Trigger.isInsert){
-        List<GoogleReview__c> newRecords = Trigger.new;
-        for (GoogleReview__c newGoogleReview : newRecords){
+        List<Event__c> newRecords = Trigger.new;
+        for (Event__c newGoogleReview : newRecords){
             GoogleReviewIdList.add(newGoogleReview.Id);
         }
-        System.debug(GoogleReviewIdList);
-        List<GoogleReview__c> existingRecords = [SELECT Target__c FROM GoogleReview__c WHERE GoogleReview__c.Id IN :GoogleReviewIdList];
-        System.debug(existingRecords);
-        for (GoogleReview__c record : existingRecords) {
+
+        List<Event__c> existingRecords = [SELECT Target__c FROM Event__c WHERE Event__c.Id IN :GoogleReviewIdList];
+        for (Event__c record : existingRecords) {
             if (!GoogleReviewCount.containsKey(record)) {
                 GoogleReviewCount.put(record, 1);
             } else {
                 GoogleReviewCount.put(record, GoogleReviewCount.get(record) + 1);
             }
         }
-        System.debug(GoogleReviewCount);
-        for (GoogleReview__c record : newRecords) {
+
+        for (Event__c record : newRecords) {
             if(GoogleReviewCount.containsKey(record)){
                 Id targetId = record.Target__c;
                 targetReviewCount.put(targetId, GoogleReviewCount.get(record));
             }
-        System.debug(targetReviewCount);
     }
     }
     
     if (Trigger.isDelete) {
-        List<GoogleReview__c> deletedRecords = Trigger.old;
-        for (GoogleReview__c oldGoogleReview : deletedRecords){
+        List<Event__c> deletedRecords = Trigger.old;
+        for (Event__c oldGoogleReview : deletedRecords){
             GoogleReviewIdList.add(oldGoogleReview.Id);
         }
 
-        List<GoogleReview__c> existingRecords = [SELECT Target__c FROM GoogleReview__c WHERE GoogleReview__c.Id IN :GoogleReviewIdList];
-        for (GoogleReview__c record : existingRecords) {
+        List<Event__c> existingRecords = [SELECT Target__c FROM Event__c WHERE Event__c.Id IN :GoogleReviewIdList];
+        for (Event__c record : existingRecords) {
             if (!GoogleReviewCount.containsKey(record)) {
                 GoogleReviewCount.put(record, 1);
             } else {
@@ -45,7 +43,7 @@ trigger GoogleReviewTrigger on GoogleReview__c (after insert, before update, bef
             }
         }
 
-        for (GoogleReview__c record : deletedRecords) {
+        for (Event__c record : deletedRecords) {
             if(GoogleReviewCount.containsKey(record)){
                 Id targetId = record.Target__c;
                 targetReviewCount.put(targetId, GoogleReviewCount.get(record));

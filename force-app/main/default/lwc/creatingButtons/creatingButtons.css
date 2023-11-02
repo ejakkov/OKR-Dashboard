@@ -1,11 +1,13 @@
 .buttons {
     display: flex;
     flex-grow: 1;
+    background-color: #f8f8f8;
+    padding-bottom: 0px;
 }
 
 .custom-button {
     flex-grow: 1;
-    margin: 0;
+    margin: 1px;
     padding: 10px 15px;
     border: none;
     border-radius: 0;
@@ -17,3 +19,4 @@
 .custom-button:hover {
     background-color: #0056b3;
 }
+

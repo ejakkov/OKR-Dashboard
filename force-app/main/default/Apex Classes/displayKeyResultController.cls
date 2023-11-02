@@ -47,8 +47,7 @@ public with sharing class displayKeyResultController {
     }
 
     public class KeyResultWrapper {
-        @AuraEnabled
-        public Id keyResultId { get; set; }
+        Id keyResultId { get; set; }
         @AuraEnabled
         public String keyResultName { get; set; }
         @AuraEnabled
